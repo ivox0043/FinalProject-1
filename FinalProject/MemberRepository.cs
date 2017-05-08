@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 namespace FinalProject
 {
    public class MemberRepository
-    {
 
+    {
+       
 
     }
 }

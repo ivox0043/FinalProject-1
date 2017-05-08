@@ -13,7 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Collections.ObjectModel;
-
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
 namespace FinalProject
 {
     /// <summary>
@@ -24,30 +26,25 @@ namespace FinalProject
         public MainWindow()
         {
             InitializeComponent();
-            CollectionViewSource itemCollectionViewSource;
-            itemCollectionViewSource = (CollectionViewSource)(FindResource("ItemCollectionViewSource"));
-            itemCollectionViewSource.Source = ObservableMemberList;
+            FillDataGrid();
         }
-        static ObservableCollection<Member> ObservableMemberList = new ObservableCollection<Member>(addMembersList);
-        public static List<Member> addMembersList = new List<Member>();
-        private void btn_EditMbr_Click(object sender, RoutedEventArgs e)
+        private void FillDataGrid()
         {
-
+            string ConString = ConfigurationManager.ConnectionStrings["ConnString"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(ConString))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("RetrieveMembers", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable("Members");
+                sda.Fill(dt);
+                MemberGrid.ItemsSource = dt.DefaultView;
+            }
         }
         private void btn_AddNew_Click(object sender, RoutedEventArgs exception)
         {
-            try
-            {
-                Member obj =  BuildMember();
-                addMembersList.Add(obj);
-                MessageBox.Show("success");
-                ClearTB();
-            }catch(Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-         
-            
+            ClearTB();
         }
         private void ClearTB()//clear the textboxes
         {
@@ -65,7 +62,7 @@ namespace FinalProject
             obj.Nationality = nationalityTB.Text;
             obj.Email = emailTB.Text;
             obj.Age = Convert.ToInt16(ageTB.Text);
-            obj.Weight = Convert.ToInt16(weightTB.Text);
+            obj.Weight = float.Parse(weightTB.Text);
             obj.PhoneNumber = phoneNumberTB.Text;
             obj.Adress = adressTB.Text;
             obj.Status = statusTB.Text;
@@ -79,9 +76,30 @@ namespace FinalProject
             return obj;
             
         }
-        private void DoNothing()
-        {
 
+        private void SaveChanges_Click(object sender, RoutedEventArgs e)
+        {
+            Member obj = BuildMember();
+            string ConString = ConfigurationManager.ConnectionStrings["ConnString"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(ConString))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("AddMemberToDB", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@FirstName", obj.FirstName));
+                cmd.Parameters.Add(new SqlParameter("@LastName",obj.LastName));
+                cmd.Parameters.Add(new SqlParameter("@Nickname", obj.Nickname));
+                cmd.Parameters.Add(new SqlParameter("@Weight",obj.Weight));
+                cmd.Parameters.Add(new SqlParameter("@Age",obj.Age));
+                cmd.Parameters.Add(new SqlParameter("@PhoneNumber",obj.PhoneNumber));
+                cmd.Parameters.Add(new SqlParameter("@Email",obj.Email));
+                cmd.Parameters.Add(new SqlParameter("@Nationality", obj.Nationality));
+                cmd.Parameters.Add(new SqlParameter("@DateOfBirth",obj.DateOfBirth));
+                cmd.Parameters.Add(new SqlParameter("@Status",obj.Status));
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Success");
+            }
+            FillDataGrid();
         }
         //private void MemberGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         //{

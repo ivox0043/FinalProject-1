@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FinalProject
+﻿namespace FinalProject
 {
 
-  public class Member
+    public class Member
     {
         private string _firstN;
         private string _lastN;
@@ -15,7 +9,7 @@ namespace FinalProject
         private string _nationality;
         private string _dob;
         private int _age;
-        private int _weight;
+        private float _weight;
         private string _phoneNr;
         private string _email;
         private string _status;
@@ -32,7 +26,7 @@ namespace FinalProject
         public string Nationality { get { return _nationality; } set { _nationality = value; } }
         public string DateOfBirth { get { return _dob; } set { _dob = value; } }
         public int Age { get { return _age; } set { _age = value; } }
-        public int Weight { get { return _weight; } set { _weight = value; } }
+        public float Weight { get { return _weight; } set { _weight = value; } }
         public string PhoneNumber { get { return _phoneNr; } set { _phoneNr = value; } }
         public string Email { get { return _email; } set { _email = value; } }
         public string Status { get { return _status; } set { _status = value; } }
@@ -44,7 +38,7 @@ namespace FinalProject
         public int AmDraw { get { return _amD; } set { _amD = value; } }
         public string Adress { get { return _adress; } set { _adress = value; } }
         public Member() { }
-        public Member(string firstN, string lastN, string nickname, string nationality, string dob, int age, int weight, string phoneNr, string email, string status, int proW, int proL, int proD, int amW, int amL, int amD, string adress)
+        public Member(string firstN, string lastN, string nickname, string nationality, string dob, int age, float weight, string phoneNr, string email, string status, int proW, int proL, int proD, int amW, int amL, int amD, string adress)
         {
             FirstName = firstN;
             LastName = lastN;
