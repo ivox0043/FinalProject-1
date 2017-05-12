@@ -9,26 +9,23 @@
 
     <Grid Margin="0,0,4.4,-0.4">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="782*"/>
-            <ColumnDefinition Width="57*"/>
+            <ColumnDefinition/>
             <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
-        <Grid HorizontalAlignment="Left" Height="429" Margin="4,0,0,15" VerticalAlignment="Bottom" Width="824" Grid.ColumnSpan="2">
+        <Grid HorizontalAlignment="Left" Height="429" Margin="4,0,0,15" VerticalAlignment="Bottom" Width="824">
             <Grid.RowDefinitions>
-                
+
             </Grid.RowDefinitions>
-            <TabControl HorizontalAlignment="Left" Height="431" VerticalAlignment="Top" Width="824" Margin="0,-31,0,0" Grid.RowSpan="2">
+            <TabControl HorizontalAlignment="Left" Height="428" VerticalAlignment="Top" Width="839" Margin="0,-28,-15,0">
                 <TabItem Header="Main">
                     <Grid Background="#FFE5E5E5"/>
                 </TabItem>
                 <TabItem Header="Member" Margin="1.6,0,-4.8,1">
-                    <Grid Background="#FFE5E5E5" Margin="0,-1,-1.6,-47.6" RenderTransformOrigin="0.502,0.573">
+                    <Grid Background="#FFE5E5E5" Margin="0,-2,-1.2,-47.8" RenderTransformOrigin="0.502,0.573">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="250*"/>
-                            <ColumnDefinition Width="54*"/>
-                            <ColumnDefinition Width="507*"/>
+                            <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
-                        <Grid HorizontalAlignment="Left" Height="381" Margin="6,10,0,0" VerticalAlignment="Top" Width="798" Grid.ColumnSpan="3"/>
+                        <Grid HorizontalAlignment="Left" Height="381" Margin="6,10,0,0" VerticalAlignment="Top" Width="798"/>
                         <Image HorizontalAlignment="Left" Height="142" Margin="10,21,0,0" VerticalAlignment="Top" Width="127"/>
                         <Button Content="Upload Picture" HorizontalAlignment="Left" Margin="10,168,0,0" VerticalAlignment="Top" Width="127" RenderTransformOrigin="0.237,0.65"/>
                         <Label Content="First Name" HorizontalAlignment="Left" Margin="150,22,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.149,0.346"/>
@@ -37,37 +34,37 @@
                         <Label Content="Nationality" HorizontalAlignment="Left" Margin="150,99,0,0" VerticalAlignment="Top"/>
                         <Label Content="Email" HorizontalAlignment="Left" Margin="150,125,0,0" VerticalAlignment="Top"/>
                         <Label Content="Age" HorizontalAlignment="Left" Margin="150,150,0,0" VerticalAlignment="Top"/>
-                        <TextBox Name="firstNameTB" Text="" HorizontalAlignment="Left" Height="23" Margin="217,24,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="3"/>
-                        <TextBox Name="lastNameTB" Text="" HorizontalAlignment="Left" Height="23" Margin="217,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="3"/>
-                        <TextBox Name="nicknameTB" Text="" HorizontalAlignment="Left" Height="23" Margin="217,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="3"/>
-                        <TextBox Name="nationalityTB" Text="" HorizontalAlignment="Left" Height="23" Margin="217,102,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="3"/>
-                        <TextBox Name="emailTB" Text="" HorizontalAlignment="Left" Height="23" Margin="217,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="3"/>
-                        <TextBox Name="ageTB" Text="" HorizontalAlignment="Left" Height="23" Margin="217,153,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="3"/>
-                        <Label Content="Weight" HorizontalAlignment="Left" Margin="38,22,0,0" VerticalAlignment="Top" Grid.Column="2"/>
-                        <Label Content="Mobile №" HorizontalAlignment="Left" Margin="38,48,0,0" VerticalAlignment="Top" Grid.Column="2"/>
-                        <Label Content="Address" HorizontalAlignment="Left" Margin="38,74,0,0" VerticalAlignment="Top" Grid.Column="2"/>
-                        <Label Content="Fighter Status" HorizontalAlignment="Left" Margin="38,100,0,0" VerticalAlignment="Top" Grid.Column="2"/>
-                        <Label Content="Am Record" HorizontalAlignment="Left" Margin="38,126,0,0" VerticalAlignment="Top" Grid.Column="2"/>
-                        <Label Content="Pro Record" HorizontalAlignment="Left" Margin="38,151,0,0" VerticalAlignment="Top" Grid.Column="2"/>
-                        <TextBox  Name="weightTB" Text="" HorizontalAlignment="Left" Height="23" Margin="98,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="2"/>
-                        <TextBox Name="phoneNumberTB" Text="" HorizontalAlignment="Left" Height="23" Margin="98,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="2"/>
-                        <TextBox Name="adressTB" Text="" HorizontalAlignment="Left" Height="23" Margin="98,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="2"/>
-                        <TextBox Name="proWTB" Text="" HorizontalAlignment="Left" Height="22" Margin="106,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="27" Grid.Column="2"/>
-                        <Button Name="btn_AddNew" Content="Add New Member" HorizontalAlignment="Left" Margin="313,24,0,0" VerticalAlignment="Top" Width="184" Click="btn_AddNew_Click" Grid.Column="2"/>
-                        <Button Name="btn_EditMbr" Content="Edit Existing Member" HorizontalAlignment="Left" Margin="313,49,0,0" VerticalAlignment="Top" Width="184" Grid.Column="2"/>
-                        <Button Name="btn_DeleteMbr" Content="Delete Existing Member" HorizontalAlignment="Left" Margin="313,75,0,0" VerticalAlignment="Top" Width="184" Grid.Column="2"/>
+                        <TextBox Name="firstNameTB" Text="" HorizontalAlignment="Left" Height="23" Margin="217,24,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                        <TextBox Name="lastNameTB" Text="" HorizontalAlignment="Left" Height="23" Margin="217,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                        <TextBox Name="nicknameTB" Text="" HorizontalAlignment="Left" Height="23" Margin="217,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                        <TextBox Name="nationalityTB" Text="" HorizontalAlignment="Left" Height="23" Margin="217,102,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                        <TextBox Name="emailTB" Text="" HorizontalAlignment="Left" Height="23" Margin="217,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                        <TextBox Name="ageTB" Text="" HorizontalAlignment="Left" Height="23" Margin="217,153,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                        <Label Content="Weight" HorizontalAlignment="Left" Margin="345,22,0,0" VerticalAlignment="Top"/>
+                        <Label Content="Mobile №" HorizontalAlignment="Left" Margin="345,48,0,0" VerticalAlignment="Top"/>
+                        <Label Content="Address" HorizontalAlignment="Left" Margin="345,74,0,0" VerticalAlignment="Top"/>
+                        <Label Content="Fighter Status" HorizontalAlignment="Left" Margin="345,100,0,0" VerticalAlignment="Top"/>
+                        <Label Content="Am Record" HorizontalAlignment="Left" Margin="345,126,0,0" VerticalAlignment="Top"/>
+                        <Label Content="Pro Record" HorizontalAlignment="Left" Margin="345,151,0,0" VerticalAlignment="Top"/>
+                        <TextBox  Name="weightTB" Text="" HorizontalAlignment="Left" Height="23" Margin="405,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                        <TextBox Name="phoneNumberTB" Text="" HorizontalAlignment="Left" Height="23" Margin="405,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                        <TextBox Name="adressTB" Text="" HorizontalAlignment="Left" Height="23" Margin="405,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                        <TextBox Name="proWTB" Text="" HorizontalAlignment="Left" Height="22" Margin="413,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="27"/>
+                        <Button Name="btn_AddNew" Content="Add New Member" HorizontalAlignment="Left" Margin="624,24,0,0" VerticalAlignment="Top" Width="184" Click="btn_AddNew_Click"/>
+                        <Button Name="btn_EditMbr" Content="Edit Existing Member" HorizontalAlignment="Left" Margin="624,49,0,0" VerticalAlignment="Top" Width="184"/>
+                        <Button Name="btn_DeleteMbr" Content="Delete Existing Member" HorizontalAlignment="Left" Margin="624,75,0,0" VerticalAlignment="Top" Width="184"/>
                         <Button Name="btn_Notify" Content="Notify Member for fee
- payment" HorizontalAlignment="Left" Margin="313,100,0,0" VerticalAlignment="Top" Width="184" Grid.Column="2"/>
-                        <TextBox Name="statusTB" Text="" HorizontalAlignment="Left" Height="21" Margin="122,104,0,0" VerticalAlignment="Top" Width="92" Grid.Column="2"/>
-                        <TextBox Name="proLTB" Text="" HorizontalAlignment="Left" Height="22" Margin="138,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="27" Grid.Column="2"/>
-                        <TextBox Name="proDTB" Text="" HorizontalAlignment="Left" Height="22" Margin="170,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="27" Grid.Column="2"/>
-                        <TextBox Name="amWTB" Text="" HorizontalAlignment="Left" Height="22" Margin="106,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="27" Grid.Column="2"/>
-                        <TextBox Name="amLTB" Text="" HorizontalAlignment="Left" Height="22" Margin="138,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="27" Grid.Column="2"/>
-                        <TextBox Name="amDTB" Text="" HorizontalAlignment="Left" Height="22" Margin="170,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="27" Grid.Column="2"/>
+ payment" HorizontalAlignment="Left" Margin="624,100,0,0" VerticalAlignment="Top" Width="184"/>
+                        <TextBox Name="statusTB" Text="" HorizontalAlignment="Left" Height="21" Margin="429,104,0,0" VerticalAlignment="Top" Width="92"/>
+                        <TextBox Name="proLTB" Text="" HorizontalAlignment="Left" Height="22" Margin="445,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="27"/>
+                        <TextBox Name="proDTB" Text="" HorizontalAlignment="Left" Height="22" Margin="481,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="27"/>
+                        <TextBox Name="amWTB" Text="" HorizontalAlignment="Left" Height="22" Margin="413,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="27"/>
+                        <TextBox Name="amLTB" Text="" HorizontalAlignment="Left" Height="22" Margin="445,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="27"/>
+                        <TextBox Name="amDTB" Text="" HorizontalAlignment="Left" Height="22" Margin="481,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="27"/>
                         <Label Content="Date of birth" HorizontalAlignment="Left" Margin="150,181,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.083,-0.539"/>
-                        <TextBox x:Name="dObTB" Text="" HorizontalAlignment="Left" Height="23" Margin="232,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="3"/>
-                        <DataGrid Name="MemberGrid" HorizontalAlignment="Left" Height="116" Margin="20,255,0,0" VerticalAlignment="Top" Width="791"  Grid.ColumnSpan="3" AutoGenerateColumns="true" />
-                        <Button x:Name="SaveChanges" Content="Save Changes" Grid.Column="2" HorizontalAlignment="Left" Margin="85.8,192,0,0" VerticalAlignment="Top" Width="99" Click="SaveChanges_Click"/>
+                        <TextBox x:Name="dObTB" Text="" HorizontalAlignment="Left" Height="23" Margin="232,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                        <DataGrid Name="MemberGrid" HorizontalAlignment="Left" Height="116" Margin="20,255,0,0" VerticalAlignment="Top" Width="791" AutoGenerateColumns="true" />
+                        <Button x:Name="SaveChanges" Content="Save Changes" HorizontalAlignment="Left" Margin="393,192,0,0" VerticalAlignment="Top" Width="99" Click="SaveChanges_Click"/>
 
                     </Grid>
                 </TabItem>

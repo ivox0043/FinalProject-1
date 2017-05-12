@@ -30,17 +30,10 @@ namespace FinalProject
         }
         private void FillDataGrid()
         {
-            string ConString = ConfigurationManager.ConnectionStrings["ConnString"].ConnectionString;
-            using (SqlConnection con = new SqlConnection(ConString))
-            {
-                con.Open();
-                SqlCommand cmd = new SqlCommand("RetrieveMembers", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                SqlDataAdapter sda = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable("Members");
-                sda.Fill(dt);
-                MemberGrid.ItemsSource = dt.DefaultView;
-            }
+            DataTable dt = new DataTable("Members");
+            DatabaseAccess DbA = new DatabaseAccess();
+            DbA.MemberDataTable(dt);
+            MemberGrid.ItemsSource = dt.DefaultView;
         }
         private void btn_AddNew_Click(object sender, RoutedEventArgs exception)
         {
@@ -72,7 +65,7 @@ namespace FinalProject
             obj.ProWins = Convert.ToInt16(proWTB.Text);
             obj.ProLoss = Convert.ToInt16(proLTB.Text);
             obj.ProDraw = Convert.ToInt16(proDTB.Text);
-            obj.DateOfBirth = dObTB.Text;//DateTime.ParseExact(dObTB.Text, "dd-MM-yyyy", System.Globalization.CultureInfo.InvariantCulture);
+            obj.DateOfBirth = dObTB.Text;
             return obj;
             
         }
@@ -80,38 +73,10 @@ namespace FinalProject
         private void SaveChanges_Click(object sender, RoutedEventArgs e)
         {
             Member obj = BuildMember();
-            string ConString = ConfigurationManager.ConnectionStrings["ConnString"].ConnectionString;
-            using (SqlConnection con = new SqlConnection(ConString))
-            {
-                con.Open();
-                SqlCommand cmd = new SqlCommand("AddMemberToDB", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add(new SqlParameter("@FirstName", obj.FirstName));
-                cmd.Parameters.Add(new SqlParameter("@LastName",obj.LastName));
-                cmd.Parameters.Add(new SqlParameter("@Nickname", obj.Nickname));
-                cmd.Parameters.Add(new SqlParameter("@Weight",obj.Weight));
-                cmd.Parameters.Add(new SqlParameter("@Age",obj.Age));
-                cmd.Parameters.Add(new SqlParameter("@PhoneNumber",obj.PhoneNumber));
-                cmd.Parameters.Add(new SqlParameter("@Email",obj.Email));
-                cmd.Parameters.Add(new SqlParameter("@Nationality", obj.Nationality));
-                cmd.Parameters.Add(new SqlParameter("@DateOfBirth",obj.DateOfBirth));
-                cmd.Parameters.Add(new SqlParameter("@Status",obj.Status));
-                cmd.ExecuteNonQuery();
+            DatabaseAccess dba = new DatabaseAccess();
+            dba.AddMemberToDb(obj);
                 MessageBox.Show("Success");
-            }
             FillDataGrid();
         }
-        //private void MemberGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        //{
-        //    CollectionViewSource itemCollectionViewSource;
-        //    itemCollectionViewSource = (CollectionViewSource)(FindResource("ItemCollectionViewSource"));
-        //    itemCollectionViewSource.Source = ObservableMemberList;
-        //}
-
-
-        // private void firstNameTB_TextChanged(object sender, TextChangedEventArgs e)
-        // {
-        //  firstNameTB.Text = string.Empty;//here can be an IF statement to check against a default one and only then to clear, like this you clear all the time he click on the box.
-        //}
     }
 }
